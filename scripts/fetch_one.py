@@ -35,6 +35,10 @@ if __name__ == "__main__":
   commit_id = row[10]
   target_dir = f"{CWE_BENCH_JAVA_ROOT_DIR}/project-sources/{project_slug}"
 
+  if os.path.exists(f"{CWE_BENCH_JAVA_ROOT_DIR}/project-sources/{project_slug}"):
+    print(f">> [CWE-Bench-Java/fetch_one] skipping")
+    exit(0)
+
   print(f">> [CWE-Bench-Java/fetch_one] Cloning repository from `{repo_url}`...")
   git_clone_cmd = ["git", "clone", "--depth", "1", repo_url, target_dir]
   subprocess.run(git_clone_cmd)
@@ -46,7 +50,7 @@ if __name__ == "__main__":
   subprocess.run(git_checkout_commit, cwd=target_dir)
 
   patch_dir = f"{CWE_BENCH_JAVA_ROOT_DIR}/patches/{project_slug}.patch"
-  if any(len(line.strip()) > 0 for line in open(patch_dir)):
+  if os.path.exists(patch_dir):
     print(f">> [CWE-Bench-Java/fetch_one] Applying patch `{patch_dir}`...")
     git_patch = ["git", "apply", patch_dir]
     subprocess.run(git_patch, cwd=target_dir)

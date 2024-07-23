@@ -15,10 +15,12 @@ def setup_jdk(version, info):
   else:
     if not os.path.exists(f"{JAVA_ENV_DIR}/{info['tar']}"):
       print(f">> [CWE-Bench-Java/setup_jdk] JDK tar {info['tar']} NOT found; skipping")
-      return
 
     print(f">> [CWE-Bench-Java/setup_jdk] Un-tar-ing JDK Binary {version}...")
-    subprocess.run(["tar", "xzvf", info["zip_file"]], cwd=JAVA_ENV_DIR)
+    output = subprocess.run(["tar", "xzvf", info["zip_file"]], cwd=JAVA_ENV_DIR)
+    if output.returncode != 0:
+      print(f">> [CWE-Bench-Java/setup_jdk] failed...")
+      exit(1)
 
 if __name__ == "__main__":
   for (version, jdk_info) in JDK_VERSIONS.items():

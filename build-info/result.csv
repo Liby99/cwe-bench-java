@@ -1,0 +1,9 @@
+project_slug,status,jdk_version,mvn_version
+perwendel__spark_CVE-2018-9159_2.7.1,success,8u202,3.5.0
+perwendel__spark_CVE-2016-9177_2.5.1,success,8u202,3.5.0
+square__retrofit_CVE-2018-1000850_2.4.0,success,8u202,3.5.0
+dromara__hutool_CVE-2018-17297_4.1.11,success,8u202,3.5.0
+vert-x3__vertx-web_CVE-2018-12542_3.5.3.CR1,success,8u202,3.5.0
+apache__jspwiki_CVE-2019-0225_2.11.0.M2,success,8u202,3.5.0
+wildfly__wildfly_CVE-2018-1047_11.0.0.Final,success,8u202,3.5.0
+DSpace__DSpace_CVE-2016-10726_4.4,success,8u202,3.5.0
