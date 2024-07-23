@@ -99,7 +99,7 @@ def is_built(project_slug) -> bool:
     return False
 
 def save_build_result(project_slug, result, attempt):
-  build_result_dir = f"{CWE_BENCH_JAVA_ROOT_DIR}/build-info/result.csv"
+  build_result_dir = f"{CWE_BENCH_JAVA_ROOT_DIR}/data/build_info.csv"
 
   rows = []
   if os.path.exists(build_result_dir):
