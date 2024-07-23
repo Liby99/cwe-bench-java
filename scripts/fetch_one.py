@@ -1,3 +1,18 @@
+"""
+Usage: python fetch_one.py <project_slug>
+
+The script fetches one project from Github, checking out the buggy commit,
+and then patches it with the essential information for it to be buildable.
+The project is specified with the Project Slug that contains project name,
+CVE ID, and version tag.
+
+Example:
+
+``` bash
+$ python fetch_one.py apache__camel_CVE-2018-8041_2.20.3
+```
+"""
+
 import os
 import argparse
 import csv
