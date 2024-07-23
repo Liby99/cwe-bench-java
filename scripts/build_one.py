@@ -13,22 +13,22 @@ ATTEMPTS = [
     "jdk": "8u202",
     "mvn": "3.5.0",
   },
-  { # Attempt 2
-    "jdk": "17",
-    "mvn": "3.5.0",
-  },
-  { # Attempt 3
-    "jdk": "17",
-    "mvn": "3.9.8",
-  },
-  { # Attempt 4
-    "jdk": "8u202",
-    "mvn": "3.9.8",
-  },
-  { # Attempt 5
-    "jdk": "7u80",
-    "mvn": "3.2.1",
-  }
+  # { # Attempt 2
+  #   "jdk": "17",
+  #   "mvn": "3.5.0",
+  # },
+  # { # Attempt 3
+  #   "jdk": "17",
+  #   "mvn": "3.9.8",
+  # },
+  # { # Attempt 4
+  #   "jdk": "8u202",
+  #   "mvn": "3.9.8",
+  # },
+  # { # Attempt 5
+  #   "jdk": "7u80",
+  #   "mvn": "3.2.1",
+  # }
 ]
 
 def build_one_project_with_attempt(project_slug, attempt) -> bool:
@@ -44,7 +44,6 @@ def build_one_project_with_attempt(project_slug, attempt) -> bool:
     "mvn",
     "clean",
     "package",
-    "pom.xml",
     "-B",
     "-V",
     "-e",
