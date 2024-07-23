@@ -1,6 +1,6 @@
 # CWE-Bench-Java
 
-![dataset-collection-process](resources/dataset-collection.pdf)
+![dataset-collection-process](resources/dataset-collection.png)
 
 ## Packaged Data
 
