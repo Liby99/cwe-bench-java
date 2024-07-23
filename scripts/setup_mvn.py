@@ -2,27 +2,12 @@ import os
 import argparse
 import csv
 import subprocess
+import json
 
 CWE_BENCH_JAVA_ROOT_DIR = os.path.abspath(os.path.join(__file__, "..", ".."))
 JAVA_ENV_DIR = os.path.join(CWE_BENCH_JAVA_ROOT_DIR, "java-env")
 
-MVN_VERSIONS = {
-  "3.2.1": {
-    "url": "https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.2.1/apache-maven-3.2.1-bin.zip",
-    "zip_file": "apache-maven-3.2.1-bin.zip",
-    "dir": "apache-maven-3.2.1",
-  },
-  "3.5.0": {
-    "url": "https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.5.0/apache-maven-3.5.0-bin.zip",
-    "zip_file": "apache-maven-3.5.0-bin.zip",
-    "dir": "apache-maven-3.5.0",
-  },
-  "3.9.8": {
-    "url": "https://dlcdn.apache.org/maven/maven-3/3.9.8/binaries/apache-maven-3.9.8-bin.zip",
-    "zip_file": "apache-maven-3.9.8-bin.zip",
-    "dir": "apache-maven-3.9.8",
-  },
-}
+MVN_VERSIONS = json.load(open(f"{CWE_BENCH_JAVA_ROOT_DIR}/scripts/mvn_version.json"))
 
 def download_mvn(version, info):
   print(f">> [CWE-Bench-Java/setup_mvn] Fetching Apache Maven {version}...")
