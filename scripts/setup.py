@@ -51,4 +51,4 @@ if __name__ == "__main__":
 
   print(f"====== Fetching and Building Repositories ======")
   reader = list(csv.reader(open(f"{CWE_BENCH_JAVA_ROOT_DIR}/data/project_info.csv")))[1:]
-  parallel_fetch_and_build(reader[:10])
+  parallel_fetch_and_build(reader)
