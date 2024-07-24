@@ -14,7 +14,7 @@ zeroturnaround__zt-zip_CVE-2018-1002201_1.12,success,8u202,3.5.0,n/a,n/a
 jlangch__venice_CVE-2022-36007_1.10.16,success,8u202,n/a,7.6.4,n/a
 srikanth-lingala__zip4j_CVE-2018-1002202_1.3.2,success,8u202,3.5.0,n/a,n/a
 testng-team__testng_CVE-2022-4065_7.5,failure,n/a,n/a,n/a,n/a
-asf__tapestry-5_CVE-2019-0207_5.4.4,failure,n/a,n/a,n/a,n/a
+asf__tapestry-5_CVE-2019-0207_5.4.4,success,8u202,n/a,n/a,1
 asf__commons-io_CVE-2021-29425_2.6,success,8u202,3.5.0,n/a,n/a
 diffplug__goomph_CVE-2022-26049_3.37.1,success,8u202,n/a,n/a,1
 ESAPI__esapi-java-legacy_CVE-2022-23457_2.2.3.1,success,8u202,3.5.0,n/a,n/a
@@ -71,7 +71,7 @@ DSpace__DSpace_CVE-2022-31192_5.10,success,8u202,3.5.0,n/a,n/a
 jmrozanec__cron-utils_CVE-2021-41269_9.1.5,success,8u202,3.5.0,n/a,n/a
 jstachio__jstachio_CVE-2023-33962_1.0.0,success,17,3.5.0,n/a,n/a
 hibernate__hibernate-validator_CVE-2019-10219_6.0.17.Final,success,17,3.5.0,n/a,n/a
-spring-projects__spring-framework_CVE-2022-22965_5.2.19.RELEASE,failure,n/a,n/a,n/a,n/a
+spring-projects__spring-framework_CVE-2022-22965_5.2.19.RELEASE,success,8u202,n/a,n/a,1
 apache__jspwiki_CVE-2022-46907_2.11.3,success,8u202,3.5.0,n/a,n/a
 xwiki__xwiki-rendering_CVE-2023-32070_14.6,success,17,3.5.0,n/a,n/a
 keycloak__keycloak_CVE-2014-3656_1.0.5.Final,success,8u202,3.5.0,n/a,n/a
