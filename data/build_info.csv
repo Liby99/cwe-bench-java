@@ -33,7 +33,7 @@ spring-cloud__spring-cloud-config_CVE-2020-5405_2.1.6.RELEASE,success,8u202,3.5.
 spring-cloud__spring-cloud-config_CVE-2020-5410_2.1.8.RELEASE,success,8u202,3.5.0,n/a
 x-stream__xstream_CVE-2021-21345_1.4.15,success,8u202,3.5.0,n/a
 codehaus-plexus__plexus-utils_CVE-2017-1000487_3.0.15,success,8u202,3.5.0,n/a
-asf__james-project_CVE-2022-22931_3.6.0,failure,n/a,n/a,n/a
+asf__james-project_CVE-2022-22931_3.6.0,success,8u202,n/a,6.8.2
 DSpace__DSpace_CVE-2022-31194_5.10,success,8u202,3.5.0,n/a
 DSpace__DSpace_CVE-2022-31195_5.10,success,8u202,3.5.0,n/a
 xwiki__xwiki-commons_CVE-2022-24897_12.6.6,failure,n/a,n/a,n/a
@@ -50,7 +50,7 @@ apache__shiro_CVE-2023-34478_1.11.0,success,8u202,3.5.0,n/a
 apache__mina-sshd_CVE-2023-35887_2.9.2,success,8u202,3.5.0,n/a
 OWASP__json-sanitizer_CVE-2020-13973_1.2.0,success,8u202,3.5.0,n/a
 apache__shiro_CVE-2023-46749_1.12.0,success,17,3.9.8,n/a
-x-stream__xstream_CVE-2020-26217_1.4.14-java7,failure,n/a,n/a,n/a
+x-stream__xstream_CVE-2020-26217_1.4.14-java7,success,8u202,n/a,6.8.2
 ESAPI__esapi-java-legacy_CVE-2022-24891_2.2.3.1,success,8u202,3.5.0,n/a
 nahsra__antisamy_CVE-2022-29577_1.6.6.1,success,8u202,3.5.0,n/a
 nahsra__antisamy_CVE-2022-28367_1.6.5,success,8u202,3.5.0,n/a
@@ -117,3 +117,4 @@ apache__camel_CVE-2019-0194_2.21.4,success,8u202,3.5.0,n/a
 asf__nifi_CVE-2023-34468_1.21.0,success,17,3.9.8,n/a
 asf__nifi_CVE-2023-36542_1.22.0,success,17,3.9.8,n/a
 apache__nifi_CVE-2022-33140_1.16.2,success,17,3.9.8,n/a
+apache__dolphinscheduler_CVE-2022-34662_2.0.9,success,8u202,3.5.0,n/a
