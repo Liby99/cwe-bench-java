@@ -1,0 +1,7 @@
+{
+  "7.6.4": {
+    "url": "https://services.gradle.org/distributions/gradle-7.6.4-bin.zip",
+    "zip_file": "gradle-7.6.4-bin.zip",
+    "dir": "gradle-7.6.4"
+  }
+}

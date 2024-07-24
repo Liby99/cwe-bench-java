@@ -52,9 +52,12 @@ if __name__ == "__main__":
     output = subprocess.run(["python", f"{CWE_BENCH_JAVA_ROOT_DIR}/scripts/setup_jdk.py"])
     if output.returncode != 0: print(f"Failed; aborting"); exit(1)
 
-  if not args.no_build:
     print(f"====== Setting up Maven ======")
     output = subprocess.run(["python", f"{CWE_BENCH_JAVA_ROOT_DIR}/scripts/setup_mvn.py"])
+    if output.returncode != 0: print(f"Failed; aborting"); exit(1)
+
+    print(f"====== Setting up Gradle ======")
+    output = subprocess.run(["python", f"{CWE_BENCH_JAVA_ROOT_DIR}/scripts/setup_gradle.py"])
     if output.returncode != 0: print(f"Failed; aborting"); exit(1)
 
   print(f"====== Fetching and Building Repositories ======")
