@@ -96,8 +96,8 @@ We provide the scripts to fetch, patch, and build projects, assuming that you ha
 In order to run the scripts, make sure that you have plenty of space on the host machine (as many projects can be very large).
 Fetching repository requires that you have `git`, `wget`, and `python3` available on your system.
 
-For building, we need Java distributions as well as Maven for package management.
-In case you have a different system than Linux x64, please modify `scripts/jdk_version.json` and `scripts/mvn_version.json` to specify the corresponding JDK/MVN files.
+For building, we need Java distributions as well as Maven and Gradle for package management.
+In case you have a different system than Linux x64, please modify `scripts/jdk_version.json`, `scripts/mvn_version.json`, and `scripts/gradle_version.json` to specify the corresponding JDK/MVN/Gradle files.
 In addition, please prepare 3 versions of JDK and put them under the `java-env` folder.
 This is due to that Oracle requires an account to download JDK, and we are unable to provide an automated script.
 Download from the following URLs:
@@ -125,7 +125,8 @@ This script will do the following things
 
 - Create `build-info` and `project-sources` directories
 - Install multiple JDK versions by unzipping your provided JDK distributions (in `java-env`)
-- Install multiple MAVEN versions by downloading and unzipping the MAVEN distributions (in `java-env`)
+- Install multiple MAVEN versions by automatically downloading and unzipping the MAVEN distributions (in `java-env`)
+- Install multiple Gradle versions by automatically downloading and unzipping the Gradle distributions (in `java-env`)
 - For each project in our dataset
   - Fetch the project into `project-sources/<project_slug>` directory
   - Build the project by trying multiple versions of JDK and MAVEN. The build information (whether it succeed or not) will be stored to `build-info/`
