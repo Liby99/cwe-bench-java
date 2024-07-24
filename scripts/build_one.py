@@ -14,22 +14,22 @@ ATTEMPTS = [
     "jdk": "8u202",
     "mvn": "3.5.0",
   },
-  # { # Attempt 2
-  #   "jdk": "17",
-  #   "mvn": "3.5.0",
-  # },
-  # { # Attempt 3
-  #   "jdk": "17",
-  #   "mvn": "3.9.8",
-  # },
-  # { # Attempt 4
-  #   "jdk": "8u202",
-  #   "mvn": "3.9.8",
-  # },
-  # { # Attempt 5
-  #   "jdk": "7u80",
-  #   "mvn": "3.2.1",
-  # }
+  { # Attempt 2
+    "jdk": "17",
+    "mvn": "3.5.0",
+  },
+  { # Attempt 3
+    "jdk": "17",
+    "mvn": "3.9.8",
+  },
+  { # Attempt 4
+    "jdk": "8u202",
+    "mvn": "3.9.8",
+  },
+  { # Attempt 5
+    "jdk": "7u80",
+    "mvn": "3.2.1",
+  }
 ]
 
 NEWLY_BUILT = "newly-built"
@@ -77,14 +77,16 @@ def build_one_project_with_attempt(project_slug, attempt):
       "JAVA_HOME": f"{CWE_BENCH_JAVA_ROOT_DIR}/java-env/{JDK_VERSIONS[attempt['jdk']]['dir']}",
     },
     stdout=subprocess.PIPE,
+    stderr=subprocess.PIPE,
+    text=True,
   )
 
   if output.returncode != 0:
     print(f">> [CWE-Bench-Java/build_one] Attempting build `{project_slug}` with MAVEN {attempt['mvn']} and JDK {attempt['jdk']} failed with return code {output.returncode}")
-    print(f"STDOUT:")
-    print(output.stdout.decode("utf-8"))
+    print(f"StdOut:")
+    print(output.stdout)
     print(f"Error message:")
-    print(output.stderr.decode("utf-8"))
+    print(output.stderr)
     return FAILED
   else:
     print(f">> [CWE-Bench-Java/build_one] Build succeeded for project `{project_slug}` with MAVEN {attempt['mvn']} and JDK {attempt['jdk']}")
