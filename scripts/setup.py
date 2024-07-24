@@ -41,6 +41,9 @@ def parallel_fetch_and_build(projects, no_build):
 if __name__ == "__main__":
   parser = argparse.ArgumentParser()
   parser.add_argument("--no-build", action="store_true")
+  parser.add_argument("--filter", nargs="+", type=str)
+  parser.add_argument("--exclude", nargs="+", type=str)
+  parser.add_argument("--cwe", nargs="+", type=str)
   args = parser.parse_args()
 
   if not args.no_build:
@@ -62,4 +65,26 @@ if __name__ == "__main__":
 
   print(f"====== Fetching and Building Repositories ======")
   reader = list(csv.reader(open(f"{CWE_BENCH_JAVA_ROOT_DIR}/data/project_info.csv")))[1:]
+
+  # Apply the filters
+  projects = []
+  for project in reader:
+    project_slug = project[1]
+    project_cwe_id = project[3]
+
+    is_queried_cwe = True
+    if args.cwe is not None and len(args.cwe) > 0:
+      is_queried_cwe = any(cwe == project_cwe_id for cwe in args.cwe)
+
+    inclusive = True
+    if args.filter is not None and len(args.filter) > 0:
+      inclusive = any(f in project_slug for f in args.filter)
+
+    exclusive = False
+    if args.exclude is not None and len(args.exclude) > 0:
+      exclusive = any(f in project_slug for f in args.exclude)
+    if is_queried_cwe and inclusive and not exclusive:
+      projects.append(project)
+
+  # Perform fetch and build on the applied
   parallel_fetch_and_build(reader, args.no_build)

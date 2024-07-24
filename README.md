@@ -131,6 +131,13 @@ This script will do the following things
   - Fetch the project into `project-sources/<project_slug>` directory
   - Build the project by trying multiple versions of JDK and MAVEN. The build information (whether it succeed or not) will be stored to `build-info/`
 
+The resulting build information will be stored under `build-info` directory.
+Each file is a `.json` storing content like the following that specifies the corresponding Java version and the used Maven/Gradle/Gradlew versions.
+
+``` json
+{"jdk": "8u202", "mvn": "3.5.0"}
+```
+
 ### Fetch without building
 
 For those of you who do not want to build, you do not need to provide the JDK distributions.
@@ -138,6 +145,18 @@ Just directly run the following command:
 
 ``` bash
 $ python3 scripts/setup.py --no-build
+```
+
+### Only fetch/build a subset of projects
+
+You can use the following arguments (or a combination of them) to specify the set of projects you want to build.
+For `--filter` and `--exclude`, we will use the specified names to match against project slugs.
+Here is a few examples:
+
+``` bash
+$ python3 scripts/setup.py --cwe CWE-022 CWE-078   # only builds projects under CWE-022 and CWE-078
+$ python3 scripts/setup.py --filter keycloak       # only build keycloak projects (there are multiple of them)
+$ python3 scripts/setup.py --exclude apache        # do not build any apache related projects
 ```
 
 ## Citation

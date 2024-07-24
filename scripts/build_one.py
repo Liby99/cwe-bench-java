@@ -43,8 +43,12 @@ ATTEMPTS = [
   #   "jdk": "8u202",
   #   "gradle": "6.8.2",
   # },
-  { # Attempt 9
-    "jdk": "8u202",
+  # { # Attempt 9
+  #   "jdk": "8u202",
+  #   "gradlew": 1,
+  # },
+  { # Attempt 10
+    "jdk": "17",
     "gradlew": 1,
   }
 ]
@@ -149,7 +153,8 @@ def build_one_project_with_gradlew(project_slug, attempt):
     },
     stdout=subprocess.PIPE,
     stderr=subprocess.PIPE,
-    text=True,)
+    text=True,
+  )
   if output.returncode != 0:
     print(f">> [CWE-Bench-Java/build_one] Attempting build `{project_slug}` with ./gradlew and JDK {attempt['jdk']} failed with return code {output.returncode}")
     print(f"StdOut:")
