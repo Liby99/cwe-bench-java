@@ -11,42 +11,42 @@ GRADLE_VERSIONS = json.load(open(f"{CWE_BENCH_JAVA_ROOT_DIR}/scripts/gradle_vers
 JDK_VERSIONS = json.load(open(f"{CWE_BENCH_JAVA_ROOT_DIR}/scripts/jdk_version.json"))
 
 ATTEMPTS = [
-  # { # Attempt 1
-  #   "jdk": "8u202",
-  #   "mvn": "3.5.0",
-  # },
-  # { # Attempt 2
-  #   "jdk": "17",
-  #   "mvn": "3.5.0",
-  # },
-  # { # Attempt 3
-  #   "jdk": "17",
-  #   "mvn": "3.9.8",
-  # },
-  # { # Attempt 4
-  #   "jdk": "8u202",
-  #   "mvn": "3.9.8",
-  # },
-  # { # Attempt 5
-  #   "jdk": "7u80",
-  #   "mvn": "3.2.1",
-  # },
-  # { # Attempt 6
-  #   "jdk": "17",
-  #   "gradle": "8.9",
-  # },
-  # { # Attempt 7
-  #   "jdk": "8u202",
-  #   "gradle": "7.6.4",
-  # },
-  # { # Attempt 8
-  #   "jdk": "8u202",
-  #   "gradle": "6.8.2",
-  # },
-  # { # Attempt 9
-  #   "jdk": "8u202",
-  #   "gradlew": 1,
-  # },
+  { # Attempt 1
+    "jdk": "8u202",
+    "mvn": "3.5.0",
+  },
+  { # Attempt 2
+    "jdk": "17",
+    "mvn": "3.5.0",
+  },
+  { # Attempt 3
+    "jdk": "17",
+    "mvn": "3.9.8",
+  },
+  { # Attempt 4
+    "jdk": "8u202",
+    "mvn": "3.9.8",
+  },
+  { # Attempt 5
+    "jdk": "7u80",
+    "mvn": "3.2.1",
+  },
+  { # Attempt 6
+    "jdk": "17",
+    "gradle": "8.9",
+  },
+  { # Attempt 7
+    "jdk": "8u202",
+    "gradle": "7.6.4",
+  },
+  { # Attempt 8
+    "jdk": "8u202",
+    "gradle": "6.8.2",
+  },
+  { # Attempt 9
+    "jdk": "8u202",
+    "gradlew": 1,
+  },
   { # Attempt 10
     "jdk": "17",
     "gradlew": 1,
