@@ -1,7 +1,17 @@
 {
+  "8.9": {
+    "url": "https://services.gradle.org/distributions/gradle-8.9-bin.zip",
+    "zip_file": "gradle-8.9-bin.zip",
+    "dir": "gradle-8.9"
+  },
   "7.6.4": {
     "url": "https://services.gradle.org/distributions/gradle-7.6.4-bin.zip",
     "zip_file": "gradle-7.6.4-bin.zip",
     "dir": "gradle-7.6.4"
+  },
+  "6.8.2": {
+    "url": "https://services.gradle.org/distributions/gradle-6.8.2-bin.zip",
+    "zip_file": "gradle-6.8.2-bin.zip",
+    "dir": "gradle-6.8.2"
   }
 }

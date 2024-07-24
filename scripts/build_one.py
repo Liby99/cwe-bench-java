@@ -32,8 +32,16 @@ ATTEMPTS = [
     "mvn": "3.2.1",
   },
   { # Attempt 6
+    "jdk": "17",
+    "gradle": "8.9",
+  },
+  { # Attempt 7
     "jdk": "8u202",
     "gradle": "7.6.4",
+  },
+  { # Attempt 8
+    "jdk": "8u202",
+    "gradle": "6.8.2",
   }
 ]
 
@@ -152,14 +160,14 @@ def save_build_result(project_slug, result, attempt):
 
   existed_and_mutated = False
   for row in rows:
+    if len(row) < 5:
+      row += ["n/a"] * (5 - len(row))
     if row[0] == project_slug:
       existed_and_mutated = True
       row[1] = "success" if result else "failure"
       row[2] = attempt["jdk"]
       row[3] = attempt["mvn"] if "mvn" in attempt else "n/a"
       row[4] = attempt["gradle"] if "gradle" in attempt else "n/a"
-    elif len(row) < 5:
-      row.append("n/a")
 
   if not existed_and_mutated:
     rows.append([project_slug, "success" if result else "failure", attempt["jdk"], attempt["mvn"] if "mvn" in attempt else "n/a", attempt["gradle"] if "gradle" in attempt else "n/a"])
