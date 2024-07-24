@@ -1,4 +1,4 @@
-project_slug,status,jdk_version,mvn_version
+project_slug,status,jdk_version,mvn_version,gradle_version
 perwendel__spark_CVE-2018-9159_2.7.1,success,8u202,3.5.0,n/a
 perwendel__spark_CVE-2016-9177_2.5.1,success,8u202,3.5.0,n/a
 square__retrofit_CVE-2018-1000850_2.4.0,success,8u202,3.5.0,n/a
@@ -116,4 +116,4 @@ apache__flink_CVE-2020-17519_1.11.2,success,8u202,3.5.0,n/a
 apache__camel_CVE-2019-0194_2.21.4,success,8u202,3.5.0,n/a
 asf__nifi_CVE-2023-34468_1.21.0,success,17,3.9.8,n/a
 asf__nifi_CVE-2023-36542_1.22.0,success,17,3.9.8,n/a
-apache__nifi_CVE-2022-33140_1.16.2,success,17,3.9.8
+apache__nifi_CVE-2022-33140_1.16.2,success,17,3.9.8,n/a
