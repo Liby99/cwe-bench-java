@@ -1,6 +1,6 @@
 {
   "17": {
-    "tar_file": "jdk-17_linux-x64.tar.gz",
+    "tar_file": "jdk-17_linux-x64_bin.tar.gz",
     "dir": "jdk-17.0.12"
   },
   "7u80": {

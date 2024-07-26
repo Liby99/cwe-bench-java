@@ -10,11 +10,11 @@ def fetch_and_build_one(payload):
   (project, no_build) = payload
   project_slug = project[1]
   print(f"== Processing {project_slug} ==")
-  output = subprocess.run(["python", f"{CWE_BENCH_JAVA_ROOT_DIR}/scripts/fetch_one.py", project_slug])
+  output = subprocess.run(["python3", f"{CWE_BENCH_JAVA_ROOT_DIR}/scripts/fetch_one.py", project_slug])
   if output.returncode != 0:
     return
   if not no_build:
-    output = subprocess.run(["python", f"{CWE_BENCH_JAVA_ROOT_DIR}/scripts/build_one.py", project_slug])
+    output = subprocess.run(["python3", f"{CWE_BENCH_JAVA_ROOT_DIR}/scripts/build_one.py", project_slug])
     if output.returncode != 0:
       return
     print(f"== Done fetching and building {project_slug} ==")
@@ -52,15 +52,15 @@ if __name__ == "__main__":
 
   if not args.no_build:
     print(f"====== Setting up JDK ======")
-    output = subprocess.run(["python", f"{CWE_BENCH_JAVA_ROOT_DIR}/scripts/setup_jdk.py"])
+    output = subprocess.run(["python3", f"{CWE_BENCH_JAVA_ROOT_DIR}/scripts/setup_jdk.py"])
     if output.returncode != 0: print(f"Failed; aborting"); exit(1)
 
     print(f"====== Setting up Maven ======")
-    output = subprocess.run(["python", f"{CWE_BENCH_JAVA_ROOT_DIR}/scripts/setup_mvn.py"])
+    output = subprocess.run(["python3", f"{CWE_BENCH_JAVA_ROOT_DIR}/scripts/setup_mvn.py"])
     if output.returncode != 0: print(f"Failed; aborting"); exit(1)
 
     print(f"====== Setting up Gradle ======")
-    output = subprocess.run(["python", f"{CWE_BENCH_JAVA_ROOT_DIR}/scripts/setup_gradle.py"])
+    output = subprocess.run(["python3", f"{CWE_BENCH_JAVA_ROOT_DIR}/scripts/setup_gradle.py"])
     if output.returncode != 0: print(f"Failed; aborting"); exit(1)
 
   print(f"====== Fetching and Building Repositories ======")

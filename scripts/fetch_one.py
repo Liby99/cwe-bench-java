@@ -9,7 +9,7 @@ CVE ID, and version tag.
 Example:
 
 ``` bash
-$ python fetch_one.py apache__camel_CVE-2018-8041_2.20.3
+$ python3 fetch_one.py apache__camel_CVE-2018-8041_2.20.3
 ```
 """
 
