@@ -94,7 +94,7 @@ Each row in `data/fix_info.csv` looks like the following.
 
 We provide the scripts to fetch, patch, and build projects, assuming that you have a machine with any distribution of Linux x64.
 In order to run the scripts, make sure that you have plenty of space on the host machine (as many projects can be very large).
-Fetching repository requires that you have `git`, `wget`, and `python3` available on your system.
+Fetching repository requires that you have `git`, `wget`, `zip`/`unzip`, `tar`, and `python3` available on your system.
 
 For building, we need Java distributions as well as Maven and Gradle for package management.
 In case you have a different system than Linux x64, please modify `scripts/jdk_version.json`, `scripts/mvn_version.json`, and `scripts/gradle_version.json` to specify the corresponding JDK/MVN/Gradle files.
