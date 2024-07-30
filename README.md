@@ -159,6 +159,23 @@ $ python3 scripts/setup.py --filter keycloak       # only build keycloak project
 $ python3 scripts/setup.py --exclude apache        # do not build any apache related projects
 ```
 
+### Build Information
+
+After building attempts, results will be output to the `build-info/` directory as well as the `data/build_info.csv`.
+Specifically, `build-info/` directory contains individual JSON files for each project; `data/build_info.csv` contains a full CSV table for all the projects.
+Each row in `data/build_info.csv` consists of the following:
+
+| project_slug | status | jdk_version | mvn_version | gradle_version | use_gradlew |
+|--------------|--------|-------------|-------------|----------------|-------------|
+| perwendel__spark_CVE-2018-9159_2.7.1 | success | 8u202 | 3.5.0 | n/a | n/a |
+
+- `project_slug`: the identifier of the project
+- `status`: either `success` or `failure` indicating whether the project has been successfully built
+- `jdk_version`: if built successfully, the JDK version used. May be `7u80`, `8u202`, or `17`
+- `mvn_version`: if built successfully with MAVEN, the MAVEN version used. Maybe 3.5.0 or 3.9.8. If not built successful or not built with MAVEN, it will be `n/a`
+- `gradle_version`: if built successfully with Gradle, the Gradle version used. Otherwise, it will be `n/a`
+- `use_gradlew`: if built successfully with the custom `gradlew` script provided with the project itself, it will be `1`. Otherwise it will be `n/a`
+
 ## Citation
 
 Consider citing our paper:
