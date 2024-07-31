@@ -87,4 +87,4 @@ if __name__ == "__main__":
       projects.append(project)
 
   # Perform fetch and build on the applied
-  parallel_fetch_and_build(reader, args.no_build)
+  parallel_fetch_and_build(projects, args.no_build)
