@@ -1,14 +1,14 @@
 {
   "17": {
     "tar_file": "jdk-17_linux-x64_bin.tar.gz",
-    "dir": "jdk-17.0.12"
+    "dir": "/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home/"
   },
   "7u80": {
     "tar_file": "jdk-7u80-linux-x64.tar.gz",
-    "dir": "jdk1.7.0_80"
+    "dir": "/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home/"
   },
   "8u202": {
     "tar_file": "jdk-8u202-linux-x64.tar.gz",
-    "dir": "jdk1.8.0_202"
+    "dir": "/Library/Java/JavaVirtualMachines/jdk1.8.0_202.jdk/Contents/Home/"
   }
 }

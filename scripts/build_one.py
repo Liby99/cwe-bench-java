@@ -84,8 +84,10 @@ def build_one_project_with_maven_attempt(project_slug, attempt):
     mvn_build_cmd,
     cwd=target_dir,
     env={
+      #"PATH": f"{os.environ['PATH']}:{CWE_BENCH_JAVA_ROOT_DIR}/java-env/{MAVEN_VERSIONS[attempt['mvn']]['dir']}/bin",
+      #"JAVA_HOME": f"{CWE_BENCH_JAVA_ROOT_DIR}/java-env/{JDK_VERSIONS[attempt['jdk']]['dir']}",
       "PATH": f"{os.environ['PATH']}:{CWE_BENCH_JAVA_ROOT_DIR}/java-env/{MAVEN_VERSIONS[attempt['mvn']]['dir']}/bin",
-      "JAVA_HOME": f"{CWE_BENCH_JAVA_ROOT_DIR}/java-env/{JDK_VERSIONS[attempt['jdk']]['dir']}",
+      "JAVA_HOME": f"{JDK_VERSIONS[attempt['jdk']]['dir']}",
     },
     stdout=subprocess.PIPE,
     stderr=subprocess.PIPE,
@@ -119,7 +121,7 @@ def build_one_project_with_gradle_attempt(project_slug, attempt):
     cwd=target_dir,
     env={
       "PATH": f"{os.environ['PATH']}:{CWE_BENCH_JAVA_ROOT_DIR}/java-env/{GRADLE_VERSIONS[attempt['gradle']]['dir']}/bin",
-      "JAVA_HOME": f"{CWE_BENCH_JAVA_ROOT_DIR}/java-env/{JDK_VERSIONS[attempt['jdk']]['dir']}",
+      "JAVA_HOME": f"{JDK_VERSIONS[attempt['jdk']]['dir']}",
     },
     stdout=subprocess.PIPE,
     stderr=subprocess.PIPE,
@@ -149,7 +151,7 @@ def build_one_project_with_gradlew(project_slug, attempt):
     ["./gradlew", "--no-daemon", "-S", "-Dorg.gradle.dependency.verification=off", "clean"],
     cwd=target_dir,
     env={
-      "JAVA_HOME": f"{CWE_BENCH_JAVA_ROOT_DIR}/java-env/{JDK_VERSIONS[attempt['jdk']]['dir']}",
+      "JAVA_HOME": f"{JDK_VERSIONS[attempt['jdk']]['dir']}",
     },
     stdout=subprocess.PIPE,
     stderr=subprocess.PIPE,
